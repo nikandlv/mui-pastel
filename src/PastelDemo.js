@@ -1,12 +1,12 @@
 import React from 'react'
-import Test from './Test'
+import Pastel from './Pastel'
 
 export default function PastelDemo() {
     return (
         <div>
-            <Test />
-            <Test />
-            <Test />
+            <Pastel />
+            <Pastel />
+            <Pastel />
         </div>
     )
 }
