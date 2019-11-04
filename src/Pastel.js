@@ -1,6 +1,5 @@
 import React from 'react'
 import Chip from '@material-ui/core/Chip'
-
 import { cyan,
         lightBlue,
         green,
@@ -18,14 +17,26 @@ import { cyan,
         yellow,
         lightGreen,
 } from '@material-ui/core/colors'
-
-import { seededGenerator, randomBetween } from '../Vendor/RandomFactory'
 import { withStyles } from '@material-ui/styles'
+import Generator from 'random-seed';
 
-const styles = theme => ({
+export function seededGenerator(str) {
+    if(typeof str === 'undefined') {
+        return Generator.create()
+    }
+    str = `${str}`.substr(0,20) + str.length
+    var seed = str;
+    return Generator.create(seed);
+}
+
+export function randomBetween(generator,min, max) { // min and max included 
+    return generator.intBetween(min, max)
+}
+
+const styles = {
     chip: {
         margin: 1,
-        color: theme.palette.common.black,
+        color: '#000000',
         '&.style-1': {
             backgroundColor: green['A100'],
         },
@@ -80,7 +91,7 @@ const styles = theme => ({
         '&.style-17': {
         },
     }
-})
+}
 
 class Pastel extends React.Component {
 
@@ -102,7 +113,6 @@ class Pastel extends React.Component {
                 className={
                     `${classes.chip} style-${this.rand}`
                 }
-                size="small"
                 {...props} classes={null}
             />
         )
