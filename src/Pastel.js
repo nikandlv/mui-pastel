@@ -46,37 +46,37 @@ const styles = {
         '&.style-3,&.style-red': {
             backgroundColor: red['A100'],
         },
-        '&.style-4,&.style-color': {
+        '&.style-4,&.style-blue': {
             backgroundColor: blue['A100'],
         },
-        '&.style-5,&.style-color': {
+        '&.style-5,&.style-orange': {
             backgroundColor: orange['A100'],
         },
-        '&.style-6,&.style-color': {
+        '&.style-6,&.style-lime': {
             backgroundColor: lime['A100'],
         },
-        '&.style-7,&.style-color': {
+        '&.style-7,&.style-purple': {
             backgroundColor: purple['A100'],
         },
-        '&.style-8,&.style-color': {
+        '&.style-8,&.style-teal': {
             backgroundColor: teal['A100'],
         },
-        '&.style-9,&.style-color': {
+        '&.style-9,&.style-pink': {
             backgroundColor: pink['A100'],
         },
-        '&.style-9,&.style-color': {
+        '&.style-9,&.style-indigo': {
             backgroundColor: indigo['A100'],
         },
-        '&.style-10,&.style-color': {
+        '&.style-10,&.style-deepPurple': {
             backgroundColor: deepPurple['A100'],
         },
-        '&.style-11,&.style-color': {
+        '&.style-11,&.style-deepOrange': {
             backgroundColor: deepOrange['A100'],
         },
-        '&.style-12,&.style-color': {
+        '&.style-12,&.style-cyan': {
             backgroundColor: cyan['A100'],
         },
-        '&.style-13,&.style-color': {
+        '&.style-13,&.style-lightBlue': {
             backgroundColor: lightBlue['A100'],
         },
         '&.style-14,&.style-yellow': {
