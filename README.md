@@ -6,6 +6,8 @@
 
 ## Demo
 
+![screenshot](./screenshot.png)
+
 #### [Demo and examples](http://nikandlv.github.io/mui-pastel)
 
 ## Install it
