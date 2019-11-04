@@ -2,6 +2,12 @@
 
 > Automatic or manual Good looking and customizable chip component
 
+![uwu Pastel](./icon.png)
+
+## Demo
+
+#### [Demo and examples](http://nikandlv.github.io/mui-pastel)
+
 ## Install it
 
 ```console
