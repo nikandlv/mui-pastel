@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import InlineDemo from "../lib/TestDemo";
+import PastelDemo from "../lib/PastelDemo";
 
 storiesOf("Demos", module)
-    .add("Test Demo", () => <PromptDemo />)
+    .add("Pastel Demo", () => <PastelDemo />)
