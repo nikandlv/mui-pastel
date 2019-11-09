@@ -1,34 +1,43 @@
-# Storybook-react
+# Mui-Pastel
 
-> Easily create react component libraries with demos and github pages support
+> Automatic or manual Good looking and customizable chip component
 
-## Features
+![uwu Pastel](./icon.png)
 
-- Compile into cjs and js
-- Create simple demos
-- Github pages support
+## Demo
 
-## Structure
+![screenshot](./screenshot.png)
 
-`stories/index.stories.js` this file contains the stories
+#### [Demo and examples](http://nikandlv.github.io/mui-pastel)
 
-`src` this folder should contain your component and their demos
+## Install it
 
-`package.json` contains the two important lines that should have the name of your main component
-
-```json
-{
-  "main": "lib/Test.js",
-  "module": "lib/Test.js"
-}
+```console
+nikandlv@nikandlv.ir:~$ npm i mui-pastel
 ```
 
-## Scripts
+## Import it
 
-`start` Start the development server
+```javascript
+import Pastel from "mui-pastel";
+```
 
-`build` Build everything
+## Automatic chip
 
-`predeploy` Build before deploy
+```jsx
+<Pastel label="Automatic!" />
+```
 
-`deploy` deploy to github pages
+## Manual chip
+
+```jsx
+<Pastel label="I love amber!" color="amber" />
+```
+
+> Pastel uses `@material-ui/core/Chip` internally and any props will pass to it
+
+## Small chip
+
+```jsx
+<Pastel label="I love amber!" color="amber" size="small" />
+```

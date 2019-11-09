@@ -1,6 +1,5 @@
 import React from 'react'
 import Chip from '@material-ui/core/Chip'
-
 import { cyan,
         lightBlue,
         green,
@@ -18,69 +17,78 @@ import { cyan,
         yellow,
         lightGreen,
 } from '@material-ui/core/colors'
-
-import { seededGenerator, randomBetween } from '../Vendor/RandomFactory'
 import { withStyles } from '@material-ui/styles'
+import Generator from 'random-seed';
 
-const styles = theme => ({
+export function seededGenerator(str) {
+    if(typeof str === 'undefined') {
+        return Generator.create()
+    }
+    str = `${str}`.substr(0,20) + str.length
+    var seed = str;
+    return Generator.create(seed);
+}
+
+export function randomBetween(generator,min, max) { // min and max included 
+    return generator.intBetween(min, max)
+}
+
+const styles = {
     chip: {
         margin: 1,
-        color: theme.palette.common.black,
-        '&.style-1': {
+        color: '#000000',
+        '&.style-1,&.style-green': {
             backgroundColor: green['A100'],
         },
-        '&.style-2': {
+        '&.style-2,&.style-amber': {
             backgroundColor: amber['A100'],
         },
-        '&.style-3': {
+        '&.style-3,&.style-red': {
             backgroundColor: red['A100'],
         },
-        '&.style-4': {
+        '&.style-4,&.style-blue': {
             backgroundColor: blue['A100'],
         },
-        '&.style-5': {
+        '&.style-5,&.style-orange': {
             backgroundColor: orange['A100'],
         },
-        '&.style-6': {
+        '&.style-6,&.style-lime': {
             backgroundColor: lime['A100'],
         },
-        '&.style-7': {
+        '&.style-7,&.style-purple': {
             backgroundColor: purple['A100'],
         },
-        '&.style-8': {
+        '&.style-8,&.style-teal': {
             backgroundColor: teal['A100'],
         },
-        '&.style-9': {
+        '&.style-9,&.style-pink': {
             backgroundColor: pink['A100'],
         },
-        '&.style-9': {
+        '&.style-9,&.style-indigo': {
             backgroundColor: indigo['A100'],
         },
-        '&.style-10': {
+        '&.style-10,&.style-deepPurple': {
             backgroundColor: deepPurple['A100'],
         },
-        '&.style-11': {
+        '&.style-11,&.style-deepOrange': {
             backgroundColor: deepOrange['A100'],
         },
-        '&.style-12': {
+        '&.style-12,&.style-cyan': {
             backgroundColor: cyan['A100'],
         },
-        '&.style-13': {
+        '&.style-13,&.style-lightBlue': {
             backgroundColor: lightBlue['A100'],
         },
-        '&.style-14': {
-            backgroundColor: lightBlue['A100'],
-        },
-        '&.style-15': {
+        '&.style-14,&.style-yellow': {
             backgroundColor: yellow['A100'],
         },
-        '&.style-16': {
+        '&.style-15,&.style-lightGreen': {
             backgroundColor: lightGreen['A100'],
         },
-        '&.style-17': {
+        '&.style-16,&.style-default': {
         },
     }
-})
+}
 
 class Pastel extends React.Component {
 
@@ -89,21 +97,20 @@ class Pastel extends React.Component {
         this.rand = randomBetween(
             seededGenerator(props.label),
             1,
-            17
+            16
         )
     }
 
     render() {
         const props = this.props
         const classes = this.props.classes
+        const color = this.props.color || null
         return (
             <Chip 
-                color="inherit"
                 className={
-                    `${classes.chip} style-${this.rand}`
+                    `${classes.chip} style-${color === null ? this.rand : color}`
                 }
-                size="small"
-                {...props} classes={null}
+                {...props} classes={null} color="default"
             />
         )
     }
